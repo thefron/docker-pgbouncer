@@ -1,5 +1,5 @@
 [databases]
-{{getenv "POSTGRES_ENV_POSTGRES_USER"}} = host={{getenv "POSTGRES_ENV_HOST"}} port=5432 dbname={{getenv "POSTGRES_ENV_POSTGRES_USER"}}
+{{getenv "POSTGRES_ENV_POSTGRES_USER"}} = host={{getenv "POSTGRES_ENV_POSTGRES_HOST"}} port=5432 dbname={{getenv "POSTGRES_ENV_POSTGRES_USER"}}
 
 [pgbouncer]
 listen_port = 6543
