@@ -1,9 +1,9 @@
 [databases]
-{{getenv "POSTGRES_USER"}} = host={{getenv "POSTGRES_HOST"}} port=5432 dbname={{getenv "POSTGRES_USER"}}
+{{getenv "POSTGRES_USER"}} = host={{getenv "POSTGRES_HOST"}} port={{getenv "POSTGRES_PORT"}} dbname={{getenv "POSTGRES_USER"}}
 
 [pgbouncer]
-listen_port = 6543
-listen_addr = *
+listen_port = {{getenv "PGBOUNCER_PORT"}}
+listen_addr = {{getenv "PGBOUNCER_HOST"}}
 auth_type = md5
 auth_file = /etc/pgbouncer/users.txt
 logfile = /var/log/pgbouncer/pgbouncer.log
