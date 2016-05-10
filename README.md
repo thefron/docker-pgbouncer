@@ -88,4 +88,4 @@ Contributing
 
 You are invited to contribute new features, fixes, or updates, large or small; It is always thrilled to receive pull requests, and process them.
 
-Before you start to code, it is recommend discussing your plans through a [GitHub issue](https://github.com/docker-library/postgres/issues), especially for ambitious contributions.
+Before you start to code, it is recommend discussing your plans through a [GitHub issue](https://github.com/ofkindness/docker-pgbouncer/issues), especially for ambitious contributions.
