@@ -18,7 +18,7 @@ RUN cd /usr/src \
 ENV PGBOUNCER_VERSION 1.6.1
 
 RUN apt-get update \
-  && apt-get install -y automake libevent-dev libssl-dev libtool pkg-config \
+  && apt-get install -y automake libevent-dev libssl-dev libtool pkg-config postgresql-client \
   && rm -rf /var/lib/apt/lists/*
 
 RUN cd /usr/src \
@@ -30,7 +30,6 @@ RUN cd /usr/src \
   && ./configure --prefix=/usr/local \
   && make \
   && make install \
-  && groupadd -r postgres && useradd -r -g postgres postgres \
   && bash -c "mkdir -pv /etc/pgbouncer /var/{log,run}/pgbouncer" \
   && bash -c "chown -R postgres:postgres /etc/pgbouncer /var/{log,run}/pgbouncer"
 
