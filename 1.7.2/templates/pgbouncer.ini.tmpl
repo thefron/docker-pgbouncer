@@ -1,6 +1,6 @@
 [databases]
 {{$user := (or (getenv "POSTGRES_ENV_POSTGRES_USER") "postgres")}}
-{{$dbname := (or (or (getenv "POSTGRES_ENV_POSTGRES_USER") (getenv "POSTGRES_ENV_POSTGRES_DB")) "postgres")}}
+{{$dbname := (or (or (getenv "POSTGRES_ENV_POSTGRES_DB") (getenv "POSTGRES_ENV_POSTGRES_USER")) "postgres")}}
 {{$address := (or (replace (getenv "POSTGRES_PORT") "tcp://" "" -1) "127.0.0.1:5432")}}
 {{$address := split $address ":"}}{{$host := index $address 0}}{{$port := index $address 1}}
 {{printf "%s = host=%s port=%s dbname=%s" $user $host $port $dbname}}
